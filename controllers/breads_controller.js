@@ -10,13 +10,7 @@ breads.get('/', (req, res) => {
       title: 'Index Page'
     }
   )
-// res.send(Bread)
 })
-
-
-
-module.exports = breads
-
 // SHOW
 breads.get('/:arrayIndex', (req, res) => {
   if (Bread[req.params.arrayIndex]) {
@@ -24,8 +18,11 @@ breads.get('/:arrayIndex', (req, res) => {
       bread:Bread[req.params.arrayIndex]
     })
   } else {
-    res.send('404')
+    res.render('404')
   }
 })
+
+module.exports = breads
+
 
 
